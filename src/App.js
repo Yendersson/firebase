@@ -1,12 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import Form from './Components/Form.jsx';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes.jsx';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Form></Form>
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
       </header>
     </div>
   );

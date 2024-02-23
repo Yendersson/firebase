@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { handleFileSelect } from "../utils";
-import { getImages, uploadFile } from "../storage";
+import { getImages, listFiles, listarFotos, uploadFile } from "../storage";
 
 const Form = () => {
 
@@ -18,6 +18,10 @@ const Form = () => {
             uploadFile(content.archivo);
         });
 
+    }
+
+    function obtenerArchivos(){
+        listarFotos();
     }
 
     function obtenerImagen(){
@@ -38,6 +42,8 @@ const Form = () => {
             <img src={photo} alt="" />
 
             <button onClick={obtenerImagen}>Obtener Imagen</button>
+
+            <button onClick={obtenerArchivos}>Listar todos los archivos</button>
         </div>
     )
 }
