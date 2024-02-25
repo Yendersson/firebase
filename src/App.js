@@ -1,15 +1,16 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import Routes from './Routes.jsx';
+import Routes from './Routes.js';
+import Header from './Components/Header.jsx'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <BrowserRouter>
+          <Header />
           <Routes />
         </BrowserRouter>
-      </header>
+      
     </div>
   );
 }

@@ -11,7 +11,7 @@ export const useCollage = (ref) => {
         console.log("Obteniendo una foto de", ref)
         obtenerUnaFoto(ref)
         .then(res => {
-            const item = res.items[0]['name'];
+            const item = res.items[0]['fullPath'];
             setItems(item);
         })
         .catch(err => alert(err))
@@ -32,7 +32,7 @@ export const useCollageAll = (ref) => {
     useEffect(_ => {
         obtenerFotosTodas(ref, 100)
         .then(res => {
-            const item = res.items.map(e=>e.name);
+            const item = res.items.map(e=>e.fullPath);
             console.log(item);
             setItems(item);
         })

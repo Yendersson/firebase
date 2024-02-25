@@ -1,17 +1,23 @@
 import { Link } from "react-router-dom";
 import { useCollage } from "../hooks/useCollage"
+import Picture from "./Picture";
 
 const CollageContainer = ({reference}) => {
     
 
     const {items, loader} = useCollage(reference);
     return (
-        <div>
-            {!loader && 
-                
-                <p>container {items}</p>
+        <>
+            {loader &&
+                <p>Loading..</p>
             }
-        </div>
+            {!loader && 
+                <Link to={reference}>
+                    <Picture photo={items} />
+                </Link>
+            }
+        </>
+        
 
     )
 }

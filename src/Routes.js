@@ -1,6 +1,6 @@
-import { useRoutes } from "react-router-dom"
-import Main from "./Components/Main"
-import Collage from "./Components/Collage"
+import { useRoutes } from 'react-router-dom';
+import Main from "./Components/Main.jsx"
+import Collage from "./Components/Collage.jsx"
 
 const Routes = () => {
 
@@ -10,7 +10,7 @@ const Routes = () => {
             element: <Main />
         },
         {
-            path: '/excursion/:ref',
+            path: '/:ref',
             element: <Collage />
         }
     ])
